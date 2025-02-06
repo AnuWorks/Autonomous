@@ -1,5 +1,7 @@
 # OIDC Demo
 
+** Please note this demo use Java 23, Please update build.gradle & Dockerfile with version you would like to test. **
+
 This project is to demo OIDC setup with Google and Github
 
 This project contains 2 endpoints
