@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: autonomous
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 83489131746-jenbknk812tkmo5fv6t7h0a8evm5dsd7.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid, profile, email
+          github:
+            client-id: Ov23liS6h6wxfa2EBsCH
+            client-secret: a1e4c31bd757d4bc1a2b3c61821f5212fb0493f4
+            scope: user:email
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+
+logging:
+  level:
+    '[org.springframework]': debug
