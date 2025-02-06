@@ -30,8 +30,8 @@ public class AuthController {
 
         Map<String, String> response = new HashMap<>();
 
-        if (user instanceof OidcUser) {
-            response.put("token", ((OidcUser) user).getIdToken().getTokenValue());
+        if (user instanceof OidcUser oidcUser) {
+            response.put("token", oidcUser.getIdToken().getTokenValue());
             response.put("provider", provider != null ? provider : "Google");
         } else {
             response.put("name", user.getAttribute("name"));
