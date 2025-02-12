@@ -13,9 +13,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeHttpRequests(
-                        authorise -> authorise.requestMatchers("/authenticate", "/myprofile")
-                                .authenticated().anyRequest().permitAll())
+                .authorizeHttpRequests(authorise -> authorise
+                        .requestMatchers("/authenticate", "/myprofile", "/access-token")
+                        .authenticated().anyRequest().permitAll())
                 .oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("/authenticate", true))
                 .logout(logout -> logout.logoutUrl("/logout").logoutSuccessUrl("/")
                         .invalidateHttpSession(true).deleteCookies("JSESSIONID"));
